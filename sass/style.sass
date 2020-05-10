@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap')
+$transition: .3s
+$box: 0 1px 1px rgba(0, 0, 0, .1)
+
+.gray
+	color: #cad6e2
+
+body
+	font-family: 'Roboto', sans-serif
+	font-size: 13px
+	background-color: #f6f9fa
+	min-height: 100vh
+	transition: $transition
+	padding-top: 62px
+	position: relative
+	@media (min-width: 992px)
+		padding-left: 280px
+	&.body-1
+		@media (min-width: 992px)
+			padding-left: 0
+	&.menubar-1
+		@media (max-width: 575.98px)
+			.sidebar-1
+				width: 250px
+			.navbar 
+				.sidebar-top
+					width: 250px
+		@media (min-width: 992px)
+			padding-left: 0
+			.sidebar-1
+				width: 60px
+				.sidebar-a
+					.col, .fa-chevron-right
+						display: none
+					.fas 
+						font-size: 16px
+				.copy 
+					display: none
+		.content
+			margin-left: 60px
+		@media (max-width: 991.98px)
+			overflow: hidden
+			transform: translateX(275px)
+		@media (max-width: 575.98px)
+			transform: translateX(280px)
+		.navbar 
+			left: -280px
+
+* 
+	outline: none !important
+
+a
+	transition: $transition
+	&:hover
+		text-decoration: none
+		opacity: .6
+
+img
+	max-width: 100%
+	height: auto
+
+.row:not(.no-gutters)
+	margin-left: -10px
+	margin-right: -10px
+	> [class*="col"]
+		padding-left: 10px
+		padding-right: 10px
+
+.row-1
+	margin-left: -4px !important
+	margin-right: -4px !important
+	> [class*="col"]
+		padding-left: 4px !important
+		padding-right: 4px !important
+
+.sidebar-1, .navbar, .content, .sidebar-top
+	transition: $transition
+
+.dropdown-menu
+	box-shadow: 0 1px 20px rgba(0, 0, 0, .1)
+
+.form-control
+	&:focus
+		box-shadow: none
+
+.h1, h1
+	font-size: 26px
+	color: #000
+	@media (max-width: 575.98px)
+		font-size: 22px
+
+.h2, h2 
+	font-size: 21px
+
+.h3, h3
+	font-size: 18px
+
+.fz-16
+	font-size: 16px
+
+.sidebar-1
+	position: fixed
+	width: 280px
+	top: 62px
+	bottom: 0
+	left: 0
+	max-height: 100vh
+	color: #fff
+	background-color: #32475c
+	display: flex
+	flex-direction: column
+	box-shadow: $box
+	z-index: 1040
+	@media (max-width: 991.98px)
+		left: -280px
+	.sidebar-bottom
+		flex-grow: 1
+		overflow: auto
+		&::-webkit-scrollbar
+			display: none
+		.sidebar-a
+			padding: 10px 15px
+			display: block
+			color: #cad6e2
+			.fa-chevron-right
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: 25px
+				font-size: 10px
+				transition: .3s
+			&:hover, &.active
+				opacity: 1
+				color: #FFF
+				background: #2c3e50
+				.fa-chevron-right
+					right: 20px
+
+.content
+	padding: 20px 
+
+.content-2
+	margin-top: 210px
+	@media (max-width: 575.98px)
+		margin-top: 70px
+
+.navbar
+	padding: 0 20px 0 0
+	box-shadow: $box
+	@media (max-width: 991.98px)
+		left: -280px
+	.sidebar-top
+		padding: 8.5px 15px
+		width: 280px
+		background: #2c3e50
+
+.logo
+	font-size: 30px
+	font-weight: 500
+	color: #FFF
+
+.logo2
+	color: #000
+
+.sandwich
+	color: #c51a00
+	display: block
+	cursor: pointer
+	padding: 0
+	border: 0
+	background: transparent
+	transition: $transition
+	margin-left: 20px
+	margin-right: 20px
+	&:before, &:after
+		content: ''
+	span, &:after
+		margin-top: 4px
+	span, &:before, &:after
+		width: 20px
+		display: block
+		transition: $transition
+		transform-origin: left center
+		border-top: 2px solid
+	&.active
+		&:before
+			transform: translateX(3px) translateY(-1px) rotate(45deg)
+		span
+			width: 0
+			opacity: 0
+		&:after
+			transform: translateX(3px) translateY(1px) rotate(-45deg)
+	&:hover 
+		opacity: .8
+#sandwich-1
+	&.active
+		color: #c51a00
+
+.dropdown-1
+	.avatar
+		width: 30px
+		height: 30px
+		border-radius: 4px
+		background-color: #DEDEDE
+		background-size: cover
+		background-position: center center
+		display: block
+		&.dropdown-toggle
+			&:after 
+				display: none
+	.dropdown-menu
+		top: 156%
+		border: 1px solid #cad6e2
+		border-top-left-radius: 0
+		border-top-right-radius: 0
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,.25)
+		margin-top: 0
+		.dropdown-item
+			padding: 5px 15px
+			font-size: 13px
+			color: #3a5269
+			&:hover, &:active, &:focus
+				opacity: 1
+				background: #2c3e50
+				color: #FFF
+		.dropdown-divider 
+			border-top: 1px solid #cad6e2
+
+.search-bar
+	border-radius: 30px
+	overflow: hidden
+	position: relative
+	font-size: 16px
+	margin-top: 15px
+	input 
+		border: 1px solid #dfe0e0
+		border-radius: 30px
+		height: 50px
+		padding-left: 20px
+		padding-right: 80px
+		width: 100%
+		@media (max-width: 575.98px)
+			height: 40px
+	.fa
+		background-color: #c42d00
+		color: #fff
+		cursor: pointer
+		font-size: 20px
+		padding: 15px 25px
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+
+.radio-group
+	display: inline-block
+	input
+		display: none
+		~ span
+			padding: 7px 16px
+			margin-left: 8px
+			margin-right: 8px
+			cursor: pointer
+		&:checked
+			~ span
+				transition: $transition
+				background: #c42d00
+				color: #FFF
+				border-radius: 100px
+
+.form-search
+	position: relative
+	.form-control
+		padding: 0 15px
+		height: 30px
+		padding-right: 35px
+		background: #ececec
+		width: 300px
+		border: 0
+		border-radius: 100px
+		font-size: 13px
+		margin: 0 16px
+		color: #32475c
+	.fas
+		transition: 0.3s
+		position: absolute
+		background: none
+		border: none
+		top: 50%
+		transform: translateY(-50%)
+		right: 28px
+		padding: 0
+		font-size: 14px
+		color: #7d7b88
+
+// Second-step
+
+.header
+	min-height: 100vh
+	display: flex
+	flex-direction: column
+	.login
+		max-width: 360px
+		background-color: #fff
+		border: 1px solid #f2f5f8
+		border-radius: 4px
+		box-shadow: 0 0 1px 1px rgba(0,0,0,.1)
+		padding: 15px 30px
+
+.form1
+	.form-control
+		text-align: center
+		padding: 32px .75rem
+		border-radius: 0
+		&:focus
+			border-color: #ced4da
+		&:first-child
+			border-top-left-radius: 8px
+			border-bottom-left-radius: 8px
+		&:last-child
+			border-top-right-radius: 8px
+			border-bottom-right-radius: 8px
+		&:not(:last-child)
+			border-right: 0
+	.btn 
+		background: #2c3e50
+		color: #FFF
+		font-size: 13px
+		padding: 10px .75rem
+	input[type="checkbox"]
+		display: none
+		~ .fa-check
+			padding: 0 
+			font-size: 12px
+			color: #FFF
+			cursor: pointer
+			margin-right: 4px
+			border: 1px solid #ced4da
+			border-radius: 3px
+		&:checked
+			~ .fa-check
+				transition: $transition
+				color: #2c3e50
+
+.breadcrumb 
+	padding: 0
+	background: inherit
+	.breadcrumb-item
+		font-size: 10px
+		a
+			color: #cccdcd
+
+.content-white
+	background: #FFF
+	border: 1px solid #f2f5f8
+	border-radius: 4px
+	box-shadow: 0 0 1px 1px rgba(0,0,0,.1)
+	padding: 25px
+
+.form2
+	.form-control
+		border-color: #cbd6e2
+		border-radius: 100px
+		font-size: 13px
