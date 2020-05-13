@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.css" rel="stylesheet">
 		<link href="libs/fine-uploader/fine-uploader-gallery.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 		<link rel="stylesheet" href="css/style.css">
 	    
 	</head>
@@ -97,7 +98,7 @@
 								<input type="text" class="form-control my-4" placeholder="Enter video URL">
 								<h3>Date</h3>
 								<p>Select the date of the PDF or Video.</p>
-								<input type="text" class="form-control w-auto text-center" placeholder="Select a date" maxlength="10">
+								<input type="text" class="form-control w-auto text-center" name="birthday" id="reportrange">
 								<h3 class="mt-4">Keywords</h3>
 								<p>Select keywords from the pre-defined set. You can also add additional keywords as needed.</p>
 							  <div class="form-group">
@@ -145,6 +146,8 @@
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.js"></script>
+	  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 		<script src="libs/fine-uploader/fine-uploader.js"></script>
 		<script type="text/template" id="qq-template-s3">
 			<div class="qq-gallery">
