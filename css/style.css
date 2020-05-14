@@ -332,8 +332,8 @@ img {
 input[type="checkbox"] {
   display: none; }
   input[type="checkbox"] ~ .fa-check {
-    padding: 0;
-    font-size: 12px;
+    padding: 3px;
+    font-size: 9px;
     color: #FFF;
     cursor: pointer;
     margin-right: 4px;
@@ -341,7 +341,7 @@ input[type="checkbox"] {
     border-radius: 3px; }
   input[type="checkbox"]:checked ~ .fa-check {
     transition: 0.3s;
-    color: #2c3e50; }
+    background: #4788fd; }
 
 .breadcrumb {
   padding: 0;

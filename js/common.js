@@ -14,46 +14,49 @@ $(document).ready(function() {
 	Waves.attach('.wave2', ['waves-dark']);
 	Waves.init();
 
-  var body = $('body');
+$(`[data-index=1]`).focus();
 
-  function goToNextInput(e) {
-    var key = e.which,
-      t = $(e.target),
-      sib = t.next('input');
-
-    if (key != 9 && (key < 48 || key > 57)) {
-      e.preventDefault();
-      return false;
-    }
-
-    if (key === 9) {
-      return true;
-    }
-
-    if (!sib || !sib.length) {
-      sib = body.find('input').eq(0);
-    }
-    sib.select().focus();
-  };
-
-  function onKeyDown(e) {
-    var key = e.which;
-
-    if (key === 9 || (key >= 48 && key <= 57)) {
-      return true;
-    }
-
+$('.verify-input-field').keypress(function(e){
+  let inputBoxIndex = $(e.target).attr('data-index');
+  let inputBox = $(e.target);
+  
+  if(inputBox.val().length > 0) {
     e.preventDefault();
-    return false;
-  };
+  }
+})
 
-  function onFocus(e) {
-    $(e.target).select();
-  };
+$('.verify-input-field').keyup(function(e){
+  
+  checkInput();
+  
+  let inputBoxIndex = $(e.target).attr('data-index');
+  let pressedKeyCode = e.keyCode | e.which;
+  let nextInputBox = $(`[data-index=${Number(inputBoxIndex) + 1}]`);
+  let prevInputBox = $(`[data-index=${Number(inputBoxIndex) - 1}]`);
+  
+  if(pressedKeyCode !== 8 && pressedKeyCode !== 37 && pressedKeyCode !== 9 && pressedKeyCode !== 16  && nextInputBox.val().length === 0 || pressedKeyCode === 39) {
+    nextInputBox.focus();
+  } else if(pressedKeyCode === 8 || pressedKeyCode === 37) {
+    prevInputBox.focus();
+  }
+    
+})
 
-  body.on('keyup', 'input', goToNextInput);
-  body.on('keydown', 'input', onKeyDown);
-  body.on('click', 'input', onFocus);
+function checkInput() {
+  let finalInput = '';
+  for(i=1; i<=5; i++) {
+    let thisInput = $(`[data-index=${i}]`).val();
+    finalInput = finalInput + thisInput.toString();
+  }
+  
+  if (finalInput === '23f34') {
+    $('.verify-input-field').addClass('verified');
+  } else {
+    $('.verify-input-field').removeClass('verified');
+  }
+}
+
+
 
   var s3Uploader = new qq.FineUploader({
     // debug: true,
