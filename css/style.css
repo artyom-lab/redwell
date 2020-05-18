@@ -421,4 +421,22 @@ input[type="checkbox"] {
   .qq-gallery .qq-upload-cancel:hover {
     background: transparent; }
 
+.form3 .form-control {
+  background: #e8f0fe;
+  font-size: 13px;
+  border-color: #cad6e2; }
+  .form3 .form-control::-webkit-input-placeholder {
+    color: #cad6e2; }
+  .form3 .form-control::-moz-placeholder {
+    color: #cad6e2; }
+  .form3 .form-control:-ms-input-placeholder {
+    color: #cad6e2; }
+  .form3 .form-control:focus {
+    border-color: #ced4da; }
+.form3 .btn {
+  background: #2c3e50;
+  color: #FFF;
+  font-size: 13px;
+  padding: 10px 0.75rem; }
+
 /*# sourceMappingURL=style.css.map */
