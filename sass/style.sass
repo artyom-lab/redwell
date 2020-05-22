@@ -99,8 +99,14 @@ img
 .h3, h3
 	font-size: 18px
 
+.fz-24
+	font-size: 24px
+.fz-19
+	font-size: 19px
 .fz-16
 	font-size: 16px
+.fz-14
+	font-size: 14px
 
 .sidebar-1
 	position: fixed
@@ -299,6 +305,25 @@ img
 		font-size: 14px
 		color: #7d7b88
 
+.form-search-2
+	.form-control
+		padding: 0 25px 0 20px
+		background: #ececec
+		width: 100%
+		&::-webkit-input-placeholder
+			color: #32475c
+		&::-moz-placeholder
+			color: #32475c
+		&:-ms-input-placeholder
+			color: #32475c
+		@media (min-width: 992px)
+			.menubar-1 &
+				display: none
+	.fas
+		right: 24px
+		font-size: 12px
+		color: #32475c
+
 // Second-step
 
 .header
@@ -347,8 +372,26 @@ input[type="checkbox"]
 	&:checked
 		~ .fa-check
 			transition: $transition
-			// color: #2c3e50
 			background: #4788fd
+
+.form3
+	.form-control
+		background: #e8f0fe
+		font-size: 13px
+		border-color: #cad6e2
+		&::-webkit-input-placeholder
+			color: #cad6e2
+		&::-moz-placeholder
+			color: #cad6e2
+		&:-ms-input-placeholder
+			color: #cad6e2
+		&:focus
+			border-color: #ced4da
+	.btn 
+		background: #2c3e50
+		color: #FFF
+		font-size: 13px
+		padding: 10px .75rem
 
 // Upload
 
@@ -430,21 +473,40 @@ input[type="checkbox"]
 		&:hover 
 			background: transparent
 
-.form3
-	.form-control
-		background: #e8f0fe
-		font-size: 13px
-		border-color: #cad6e2
-		&::-webkit-input-placeholder
-			color: #cad6e2
-		&::-moz-placeholder
-			color: #cad6e2
-		&:-ms-input-placeholder
-			color: #cad6e2
-		&:focus
-			border-color: #ced4da
-	.btn 
-		background: #2c3e50
+// PDF/Video
+
+.content-responsive
+	transition: $transition
+	.menubar-1 &
+		@media (min-width: 992px)
+			margin-left: 60px
+		@media (max-width: 575.98px)
+			margin-left: -30px
+	.content-gray
+		padding: 20px 
+		background: #6a81a4
 		color: #FFF
-		font-size: 13px
-		padding: 10px .75rem
+		@media (max-width: 767.98px)
+			padding: 20px 15px 
+		.breadcrumb 
+			padding: 0
+			background: inherit
+			margin-bottom: 8px
+			.breadcrumb-item
+				font-size: 10px
+				&.active, &:before
+					color: #FFF
+				a
+					color: #FFF
+	.content-main
+		color: #7d7c8e
+		padding: 30px 30px 80px 
+		@media (max-width: 767.98px)
+			padding: 30px 15px 
+
+.img-container
+	background-color: #fff
+	border: 1px solid #f2f5f8
+	border-radius: 4px
+	box-shadow: 0 0 1px 1px rgba(0,0,0,.1)
+	padding: 15px 
